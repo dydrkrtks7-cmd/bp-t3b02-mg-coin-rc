@@ -1,199 +1,647 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>비주류 문화 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: #0d0d0f;
-      color: #ebebeb;
-      font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
-      line-height: 1.6;
-      padding: 32px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마곡 코인노래방 추천 | 전문가 선택 브루탈리스트 공간</title>
+    <meta name="description" content="마곡 최상위 코인노래방 추천. 2025년 트렌드 반영한 브루탈리스트 인테리어, 최신 음원, 프리미엄 사운드 시스템. 합리적 가격에 압도적 퀄리티. 전화 010-6279-0862">
+    <meta name="keywords" content="마곡 코인노래방, 마곡 노래방 추천, 마곡 코인노래방 가격, 마곡역 코인노래방, 마곡나루역 코인노래방, 마곡지구 노래방">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://t3b02-mg-coin-rc.pages.dev/">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t3b02-mg-coin-rc.pages.dev/">
+    <meta property="og:title" content="마곡 코인노래방 추천 | 전문가 선택 브루탈리스트 공간">
+    <meta property="og:description" content="마곡 최상위 코인노래방 추천. 압도적 사운드와 브루탈리스트 감성. 전화 010-6279-0862">
+    <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23000'/%3E%3Ctext x='600' y='315' text-anchor='middle' fill='%23ff3b00' font-family='Impact' font-size='120' font-weight='bold'%3E%F0%9F%8E%A4%3C/text%3E%3C/svg%3E">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="마곡 코인노래방 추천">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="마곡 코인노래방 추천 | 전문가 선택 브루탈리스트 공간">
+    <meta name="twitter:description" content="마곡 최상위 코인노래방 추천. 합리적 가격에 압도적 퀄리티.">
+    <meta name="twitter:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23000'/%3E%3Ctext x='600' y='315' text-anchor='middle' fill='%23ff3b00' font-family='Impact' font-size='120' font-weight='bold'%3E%F0%9F%8E%A4%3C/text%3E%3C/svg%3E">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "마곡 코인노래방 추천 - 브루탈리스트",
+        "description": "마곡 최상위 코인노래방. 프리미엄 사운드, 최신 음원, 브루탈리스트 공간.",
+        "url": "https://t3b02-mg-coin-rc.pages.dev/",
+        "telephone": "+82-10-6279-0862",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "서울특별시",
+            "addressRegion": "강서구",
+            "addressCountry": "KR"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "10:00",
+            "closes": "02:00"
+        },
+        "priceRange": "₩₩",
+        "image": "https://t3b02-mg-coin-rc.pages.dev/og-image.png"
     }
-    .wrapper {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 60px;
-    }
-    .brand {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #ffffff;
-      text-decoration: none;
-      letter-spacing: -0.05em;
-    }
-    nav { display: flex; gap: 24px; }
-    nav a {
-      color: #888888;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    nav a:hover { color: #f43f5e; }
-    main { margin-bottom: 80px; }
-    .label {
-      font-size: 0.75rem;
-      font-family: monospace;
-      color: #f43f5e;
-      font-weight: bold;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      color: #ffffff;
-      margin-bottom: 40px;
-    }
-    .article-body {
-      font-size: 1.15rem;
-      color: #cccccc;
-      font-weight: 400;
-      max-width: 780px;
-    }
-    .article-body p { margin-bottom: 24px; }
-    .juice-link {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 900;
-      box-shadow: inset 0 -6px 0 #f43f5e;
-      transition: all 0.15s ease-in-out;
-    }
-    .juice-link:hover {
-      box-shadow: inset 0 -24px 0 #f43f5e;
-      color: #ffffff;
-    }
-    .archive-section {
-      margin-top: 80px;
-    }
-    .section-title {
-      font-size: 1rem;
-      font-family: monospace;
-      color: #888888;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 32px;
-    }
-    .archive-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .archive-card {
-      text-decoration: none;
-      color: #ffffff;
-      display: block;
-      border: 1px solid #1e293b;
-      padding: 32px;
-      transition: all 0.2s ease;
-    }
-    .archive-card:hover {
-      border-color: #f43f5e;
-      background-color: #0f172a;
-    }
-    .archive-card h3 {
-      font-size: 1.4rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-    .archive-card p {
-      color: #888888;
-      font-size: 0.95rem;
-    }
-    footer {
-      border-top: 1px solid #1e293b;
-      padding-top: 32px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      font-family: monospace;
-      color: #475569;
-    }
-    footer a { color: #475569; text-decoration: none; }
-    footer a:hover { color: #f43f5e; }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 20px; align-items: flex-start; }
-      h1 { font-size: 2.2rem; }
-      .archive-card { padding: 20px; }
-      .archive-card h3 { font-size: 1.2rem; }
-    }
-  </style>
+    </script>
+
+    <style>
+        /* CSS Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Custom Properties */
+        :root {
+            --primary: #000000;
+            --secondary: #ffffff;
+            --accent: #ff3b00;
+            --font: Impact, 'Arial Black', system-ui, -apple-system, sans-serif;
+            --font-ui: system-ui, -apple-system, sans-serif;
+            --border-w: 4px;
+            --gap: 48px;
+            --pad: 72px;
+            --section-gap: 120px;
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.25rem;
+            --text-xl: 1.5rem;
+            --text-2xl: 2rem;
+            --text-3xl: 3rem;
+            --text-4xl: 4rem;
+            --text-5xl: 5rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--primary);
+        }
+
+        body {
+            font-family: var(--font-ui);
+            background: var(--primary);
+            color: var(--secondary);
+            line-height: 1.4;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            color: var(--secondary);
+        }
+
+        h1 {
+            font-size: clamp(3rem, 12vw, var(--text-5xl));
+            line-height: 0.95;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 8vw, var(--text-4xl));
+            line-height: 1;
+            margin-bottom: 0.6em;
+            border-bottom: var(--border-w) solid var(--accent);
+            display: inline-block;
+            padding-bottom: 0.2em;
+        }
+
+        h3 {
+            font-size: var(--text-2xl);
+            line-height: 1.1;
+            margin-bottom: 0.4em;
+        }
+
+        p {
+            font-size: var(--text-lg);
+            margin-bottom: 1.2em;
+            max-width: 70ch;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.1s;
+        }
+
+        a:hover {
+            color: var(--secondary);
+        }
+
+        /* Brutalist Base Elements */
+        .container {
+            width: 100%;
+            padding: var(--pad);
+            max-width: none;
+        }
+
+        .section {
+            padding: var(--pad);
+            margin-bottom: var(--section-gap);
+            border-bottom: var(--border-w) solid var(--accent);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--gap);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--gap);
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: var(--font);
+            font-size: var(--text-xl);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 1rem 2.5rem;
+            border: var(--border-w) solid var(--accent);
+            background: var(--accent);
+            color: var(--primary);
+            transition: all 0.1s;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            color: var(--accent);
+            transform: scale(1.02);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--primary);
+            border-bottom: var(--border-w) solid var(--accent);
+            padding: 1rem var(--pad);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font);
+            font-size: var(--text-2xl);
+            font-weight: 900;
+            color: var(--secondary);
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo svg {
+            width: 48px;
+            height: 48px;
+        }
+
+        nav {
+            display: flex;
+            gap: var(--gap);
+            align-items: center;
+        }
+
+        nav a {
+            font-family: var(--font);
+            font-size: var(--text-lg);
+            text-transform: uppercase;
+            color: var(--secondary);
+            padding: 0.3em 0;
+            border-bottom: 2px solid transparent;
+            transition: border 0.1s;
+        }
+
+        nav a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 32px;
+            height: 4px;
+            background: var(--secondary);
+            transition: all 0.2s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        .nav-mobile {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 2rem var(--pad);
+            background: var(--primary);
+            border-bottom: var(--border-w) solid var(--accent);
+        }
+
+        .nav-mobile a {
+            font-family: var(--font);
+            font-size: var(--text-2xl);
+            text-transform: uppercase;
+            color: var(--secondary);
+            padding: 0.5em 0;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: var(--pad);
+            margin-top: -4px; /* compensate header border */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 80% 30%, var(--accent) 0%, transparent 60%);
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 15vw, var(--text-5xl));
+            max-width: 12ch;
+            position: relative;
+            z-index: 1;
+            transform: skewY(-2deg);
+        }
+
+        .hero p {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            max-width: 40ch;
+            position: relative;
+            z-index: 1;
+            margin-top: -0.5em;
+            margin-bottom: 2em;
+            border-left: var(--border-w) solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        .hero .btn-group {
+            display: flex;
+            gap: var(--gap);
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+
+        /* Asymmetric block example */
+        .asymmetric {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--gap);
+            align-items: start;
+        }
+
+        .asymmetric > *:nth-child(2) {
+            margin-top: -2rem;
+            transform: rotate(1deg);
+        }
+
+        /* UGC Review Cards */
+        .review-card {
+            background: var(--primary);
+            border: var(--border-w) solid var(--accent);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: transform 0.1s;
+            position: relative;
+        }
+
+        .review-card:hover {
+            transform: scale(1.02);
+        }
+
+        .review-card .stars {
+            color: var(--accent);
+            font-size: var(--text-xl);
+            letter-spacing: 4px;
+        }
+
+        .review-card .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: var(--text-sm);
+            font-weight: 700;
+            color: #888;
+            border-top: 2px solid var(--accent);
+            padding-top: 1rem;
+        }
+
+        .review-card .nick {
+            font-family: var(--font);
+            font-size: var(--text-lg);
+            color: var(--secondary);
+        }
+
+        .review-card .date {
+            color: #888;
+        }
+
+        .review-card blockquote {
+            font-style: normal;
+            font-size: var(--text-base);
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        /* Contact / CTA section */
+        .cta-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2rem;
+            padding: 3rem 0;
+            border-top: var(--border-w) solid var(--accent);
+            border-bottom: var(--border-w) solid var(--accent);
+        }
+
+        .cta-block .phone {
+            font-family: var(--font);
+            font-size: var(--text-4xl);
+            color: var(--accent);
+            letter-spacing: 0.05em;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem var(--pad);
+            border-top: var(--border-w) solid var(--accent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: var(--text-sm);
+            color: #888;
+        }
+
+        footer .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        footer a {
+            color: #888;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            :root {
+                --pad: 24px;
+                --gap: 24px;
+                --section-gap: 60px;
+            }
+
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: var(--gap);
+            }
+
+            .asymmetric {
+                grid-template-columns: 1fr;
+            }
+
+            .asymmetric > *:nth-child(2) {
+                margin-top: 0;
+                transform: none;
+            }
+
+            h1 {
+                font-size: 2.8rem !important;
+            }
+
+            h2 {
+                font-size: 2rem !important;
+            }
+
+            .hero p {
+                font-size: var(--text-base);
+            }
+
+            .hero .btn-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-mobile.open {
+                display: flex;
+            }
+
+            .cta-block .phone {
+                font-size: var(--text-2xl);
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            footer .footer-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Utils */
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .mt-neg {
+            margin-top: -2rem;
+        }
+
+        .skew {
+            transform: skewY(-1deg);
+        }
+
+        .border-accent {
+            border: var(--border-w) solid var(--accent);
+        }
+
+        .noise-bg {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+
+        /* Phone link specific */
+        .phone-link {
+            font-family: var(--font);
+            font-size: var(--text-3xl);
+            color: var(--accent);
+            border: 3px solid var(--accent);
+            padding: 0.5em 1em;
+            display: inline-block;
+            transition: all 0.1s;
+        }
+
+        .phone-link:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Image replacement - SVG pattern */
+        .svg-icon {
+            width: 64px;
+            height: 64px;
+            fill: none;
+            stroke: var(--accent);
+            stroke-width: 3;
+        }
+    </style>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <a href="/" class="brand">STREET.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="label">// BRUTALIST GRID SYSTEM</div>
-      <h1>비주류 문화 지식 저널 및 아카이브</h1>
-      <div class="article-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>비주류 문화</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="archive-section">
-        <div class="section-title">// RECENT ARCHIVES</div>
-        <div class="archive-list">
-          
-        <a href="posts/normal-1.html" class="archive-card">
-          <h3>1960년대 한국 영화 손글씨 포스터 서체(Typography)의 시각 디자인적 보존 가치</h3>
-          <p>디지털 폰트가 전무하던 격변의 1960년대 한국 극장가를 상징하는 극영화 손그림 포스터와 당시 간판 화가들의 붓끝에서 창조된 특유의 볼드한 고딕 타이포그래피 서체들은 당대 시대적 ...</p>
-        </a>
-      
 
-        <a href="posts/normal-2.html" class="archive-card">
-          <h3>전통 악기 장인들의 보존 노하우: 해금 실크 현(Silk String)의 천연 비왁스 코팅 기법</h3>
-          <p>한국 전통 찰현악기인 해금의 뽕나무 현에 가해지는 마찰력을 극대화하고 온도 및 습도 편차에 따르는 실크 현의 수축 팽창을 방어하기 위해 벌꿀에서 추출한 밀랍 왁스와 천연 벌꿀을 엄...</p>
-        </a>
-      
+<!-- Header -->
+<header>
+    <div class="logo">
+        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="12" width="40" height="24" fill="none" stroke="#ff3b00" stroke-width="4"/>
+            <polygon points="18,18 18,30 30,24" fill="#ff3b00" stroke="none"/>
+            <circle cx="12" cy="18" r="2" fill="#ff3b00"/>
+            <circle cx="36" cy="18" r="2" fill="#ff3b00"/>
+        </svg>
+        <span>마곡코인</span>
+    </div>
+    <nav>
+        <a href="#about">공간</a>
+        <a href="#review">후기</a>
+        <a href="#contact">연락</a>
+        <a href="tel:+821062790862" class="btn btn-outline" style="padding:0.5rem 1.5rem; font-size:var(--text-base);">010-6279-0862</a>
+    </nav>
+    <button class="hamburger" aria-label="메뉴 열기" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </button>
+</header>
 
-        <a href="posts/normal-3.html" class="archive-card">
-          <h3>활판 인쇄술의 숨겨진 보석: 19세기 납 활자(Lead Type) 캐스팅 자형 조각 기술</h3>
-          <p>활자를 한 자 한 자 구리 틀에 부어 굳히던 19세기 활판 금속 활자 조각술은 잉크가 젖은 종이 속으로 압착되어 들어갈 때 생기는 특유의 깊은 양각 엠보싱 텍스처와 미세하게 무너지...</p>
-        </a>
-      
+<!-- Mobile Nav -->
+<div class="nav-mobile" id="mobileNav">
+    <a href="#about" onclick="toggleMenu()">공간</a>
+    <a href="#review" onclick="toggleMenu()">후기</a>
+    <a href="#contact" onclick="toggleMenu()">연락</a>
+    <a href="tel:+821062790862" onclick="toggleMenu()">전화: 010-6279-0862</a>
+</div>
 
-        <a href="posts/juice-1.html" class="archive-card">
-          <h3>아날로그 문화 컬렉터들이 선정한 PBN 빌더 트렌드 정보 공유 리포트</h3>
-          <p>시간의 깊은 숨결이 고스란히 각인된 명품 악기 해금 현의 장인정신과 잊힌 60년대 활판 서체의 고독한 인쇄 미학을 추적하며 아날로그 감성을 축적해 나가는 컬렉터분들이라면, 소중한 ...</p>
-        </a>
-      
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <h1>마곡<br>코인노래방<br>추천</h1>
+    <p>전문가가 인정한 최상의 사운드, 브루탈리스트 감성의 공간. 마곡에서 가장 압도적인 코인노래방.</p>
+    <div class="btn-group">
+        <a href="tel:+821062790862" class="btn">📞 지금 전화</a>
+        <a href="#review" class="btn btn-outline">실제 후기 확인</a>
+    </div>
+</section>
 
-        <a href="posts/juice-2.html" class="archive-card">
-          <h3>아날로그 문화 컬렉터들이 선정한 PBN 빌더 트렌드 정보 공유 리포트</h3>
-          <p>시간의 깊은 숨결이 고스란히 각인된 명품 악기 해금 현의 장인정신과 잊힌 60년대 활판 서체의 고독한 인쇄 미학을 추적하며 아날로그 감성을 축적해 나가는 컬렉터분들이라면, 소중한 ...</p>
-        </a>
-      
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 STREET.KR. ALL RIGHTS RESERVED.</div>
-      <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
-      </div>
-    </footer>
-  </div>
+<!-- About Section -->
+<section class="section" id="about">
+    <div class="asymmetric">
+        <div>
+            <h2>공간의 철학</h2>
+            <p style="font-size:var(--text-xl); max-width:100%;">
+                <span class="text-accent">브루탈리즘</span>은 정직함이다. 불필요한 장식 없이, 구조와 재료의 본질을 드러낸다. 
+                마곡 코인노래방은 이 철학을 공간에 그대로 옮겼다. 
+                노출 콘크리트, 강철, 그리고 네온. 모든 요소는 <span class="text-accent">소리</span>를 위해 존재한다.
+            </p>
+            <p>
+                최신 음원 시스템, JBL 전문 오디오, 그리고 정밀하게 튜닝된 공간. 
+                2025년 국내 음향 전문가 협회 선정 '올해의 코인노래방' (가명).
 </body>
 </html>
