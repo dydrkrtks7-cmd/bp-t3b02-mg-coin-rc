@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t3b02-mg-coin-rc</title>
+  <meta name="description" content="t3b02-mg-coin-rc에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://magok-song-guide.mapo-room-guide.xyz/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* CSS Reset & Variables */
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+ }
+
+ :root {
+ --bg-color: #050505;
+ --surface-color: #121212;
+ --signal-green: #39ff14;
+ --signal-red: #ff073a;
+ --signal-yellow: #fff000;
+ --border-color: #ffffff;
+ --text-primary: #ffffff;
+ --text-secondary: #bcbcbc;
+ --accent-blue: #00f0ff;
+ }
+
+ body {
+ background-color: var(--bg-color);
+ color: var(--text-primary);
+ overflow-x: hidden;
+ line-height: 1.6;
+ }
+
+ /* Typography Hierarchy */
+ h1, h2, h3, h4 {
+ font-weight: 900;
+ text-transform: uppercase;
+ letter-spacing: -0.05em;
+ }
+
+ h1 {
+ font-size: clamp(2.5rem, 6vw, 4.5rem);
+ line-height: 1.0;
+ }
+
+ h2 {
+ font-size: clamp(1.8rem, 4vw, 2.8rem);
+ line-height: 1.1;
+ border-bottom: 4px solid var(--text-primary);
+ padding-bottom: 10px;
+ margin-bottom: 30px;
+ }
+
+ h3 {
+ font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+ color: var(--signal-green);
+ }
+
+ p {
+ font-size: 1.1rem;
+ color: var(--text-secondary);
+ }
+
+ /* Layout Helpers */
+ .t-wrap-fdrq {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 20px;
+ }
+
+ .m-body-ii9z {
+ padding: 80px 0;
+ }
+
+ /* Brutalist Navigation */
+ header {
+ border-bottom: 4px solid var(--border-color);
+ background: var(--bg-color);
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+
+ .nav-container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ height: 80px;
+ }
+
+ .logo {
+ font-size: 1.5rem;
+ font-weight: 900;
+ color: var(--text-primary);
+ text-decoration: none;
+ border: 2px solid var(--text-primary);
+ padding: 5px 15px;
+ background: var(--signal-red);
+ box-shadow: 4px 4px 0px var(--text-primary);
+ transition: 0.2s;
+ }
+
+ .logo:hover {
+ transform: translate(-2px, -2px);
+ box-shadow: 6px 6px 0px var(--text-primary);
+ }
+
+ nav ul {
+ display: flex;
+ list-style: none;
+ gap: 20px;
+ }
+
+ nav a {
+ color: var(--text-primary);
+ text-decoration: none;
+ font-weight: 700;
+ font-size: 1rem;
+ padding: 5px 10px;
+ border: 1px solid transparent;
+ }
+
+ nav a:hover {
+ border-color: var(--signal-green);
+ background: rgba(57, 255, 20, 0.1);
+ }
+
+ /* Art Deco Symmetric Frame & Brutalist Cards */
+ .r-list-vgn8-frame {
+ border: 4px solid var(--border-color);
+ background: var(--surface-color);
+ padding: 40px;
+ position: relative;
+ margin-bottom: 60px;
+ box-shadow: 10px 10px 0px var(--signal-green);
+ }
+
+ .r-list-vgn8-frame::before {
+ content: '';
+ position: absolute;
+ top: 5px;
+ left: 5px;
+ right: 5px;
+ bottom: 5px;
+ border: 1px solid var(--text-secondary);
+ pointer-events: none;
+ }
+
+ /* Night Transit Map Concept Styles */
+ .transit-map {
+ display: flex;
+ flex-direction: column;
+ gap: 40px;
+ position: relative;
+ margin-top: 40px;
+ }
+
+ .transit-map::before {
+ content: '';
+ position: absolute;
+ left: 29px;
+ top: 0;
+ bottom: 0;
+ width: 6px;
+ background: repeating-linear-gradient(
+ to bottom,
+ var(--signal-red),
+ var(--signal-red) 20px,
+ var(--signal-yellow) 20px,
+ var(--signal-yellow) 40px
+ );
+ z-index: 1;
+ }
+
+ .transit-node {
+ display: flex;
+ gap: 30px;
+ position: relative;
+ z-index: 2;
+ }
+
+ .node-marker {
+ width: 64px;
+ height: 64px;
+ background: var(--bg-color);
+ border: 4px solid var(--border-color);
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: 900;
+ font-size: 1.5rem;
+ color: var(--signal-green);
+ flex-shrink: 0;
+ box-shadow: 4px 4px 0px var(--signal-yellow);
+ }
+
+ .node-content {
+ background: #181818;
+ border: 2px solid var(--border-color);
+ padding: 25px;
+ width: 100%;
+ box-shadow: 6px 6px 0px var(--text-primary);
+ }
+
+ .node-content h3 {
+ margin-bottom: 15px;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ }
+
+ .badge {
+ background: var(--signal-red);
+ color: white;
+ font-size: 0.8rem;
+ padding: 2px 8px;
+ font-weight: 700;
+ border: 1px solid white;
+ }
+
+ /* Grid Layouts */
+ .grid-2col {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ margin-top: 40px;
+ }
+
+ @media (max-width: 768px) {
+ .grid-2col {
+ grid-template-columns: 1fr;
+ }
+ .transit-map::before {
+ left: 19px;
+ }
+ .node-marker {
+ width: 44px;
+ height: 44px;
+ font-size: 1.1rem;
+ }
+ nav ul {
+ display: none; /* Hamburger pattern placeholder for responsive-768 */
+ }
+ }
+
+ /* Edgy Warning Callout */
+ .warning-box {
+ border: 4px solid var(--signal-red);
+ background: rgba(255, 7, 58, 0.1);
+ padding: 30px;
+ margin: 40px 0;
+ position: relative;
+ }
+
+ .warning-box h4 {
+ color: var(--signal-red);
+ font-size: 1.5rem;
+ margin-bottom: 10px;
+ }
+
+ /* Footer */
+ footer {
+ border-top: 4px solid var(--border-color);
+ padding: 60px 0;
+ background: #000;
+ margin-top: 80px;
+ }
+
+ .footer-grid {
+ display: grid;
+ grid-template-columns: 2fr 1fr 1fr;
+ gap: 40px;
+ }
+
+ @media (max-width: 768px) {
+ .footer-grid {
+ grid-template-columns: 1fr;
+ }
+ }
+
+ .footer-brand h5 {
+ font-size: 1.8rem;
+ color: var(--signal-green);
+ margin-bottom: 20px;
+ }
+
+ .footer-links h6 {
+ font-size: 1.1rem;
+ margin-bottom: 15px;
+ border-bottom: 2px solid var(--border-color);
+ padding-bottom: 5px;
+ }
+
+ .footer-links ul {
+ list-style: none;
+ }
+
+ .footer-links li {
+ margin-bottom: 10px;
+ }
+
+ .footer-links a {
+ color: var(--text-secondary);
+ text-decoration: none;
+ }
+
+ .footer-links a:hover {
+ color: var(--signal-yellow);
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · t3b02-mg-coin-rc">
+  <meta property="og:description" content="t3b02-mg-coin-rc에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://magok-song-guide.mapo-room-guide.xyz/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="t-wrap-fdrq nav-container">
+ <a href="/" class="logo">MAGOK SIGNAL</a>
+ <nav>
+ <ul>
+ <li><a href="/">홈</a></li>
+ <li><a href="/blog" style="color: var(--signal-yellow); border-bottom: 2px solid var(--signal-yellow);">가이드 블로그</a></li>
+ </ul>
+ </nav>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 32개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0061.html">마곡 코인노래방 추천 합정 셔츠룸 단골들이 뽑은 핫플 매거진과 트렌드 서포터</a>
+        <p class="post-item__summary">일상의 스트레스를 해소하기 위해 마곡 코인노래방 추천 정보를 검색하는 이들이 늘고 있습니다. 다만 온라인상의 정보가 범람하면서 정작 실속 있는 장소를 골라내는 안목이 중요해졌습니다. 최근 주목받는 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0276.html">마곡 코인노래방 추천 목록으로 보는 홍대 노래방 추천정보 비교 가이드</a>
+        <p class="post-item__summary">번화가를 걷다 보면 수많은 유흥 시설 사이에서 과연 어디가 최고의 선택일지 고민하게 되지 않으신가요? 특히 마곡 코인노래방 추천 리스트를 찾던 분들이 홍대 지역으로 이동하며 더 폭넓은 선택지에 혼란</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0277.html">마곡 코인노래방 추천 방식처럼 알아보는 공덕 셔츠룸 추천정보 탐색법</a>
+        <p class="post-item__summary">다양한 유흥 정보를 탐색할 때 신뢰할 수 있는 자료를 걸러내는 절차는 매우 중요합니다. 마곡 코인노래방 추천 방식을 응용하여 새로운 지역의 업소를 찾을 때도 단계별 접근이 필요합니다. 가장 먼저 해</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0278.html">마곡 코인노래방 추천 대비 연남 유흥 추천정보 특징 분석</a>
+        <p class="post-item__summary">가벼운 마음으로 즐기는 마곡 코인노래방 추천 장소들과 달리 연남 지역은 독특한 분위기를 가진 공간이 많습니다. 짧은 시간 동안 노래를 즐기는 것과 깊이 있는 시간을 보내는 방식은 소비의 결 자체가 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0279.html">마곡 코인노래방 추천 시 고려할 마곡 가라오케 추천정보 예약 팁</a>
+        <p class="post-item__summary">마곡 코인노래방 추천 리스트를 찾는 분들 중에는 보다 고급스러운 환경을 원하는 수요도 존재합니다. 하지만 예약 과정에서 기본적인 절차를 간과하면 낭패를 보기 쉽습니다. 특히 주말이나 특정 시간에는 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0280.html">마곡 코인노래방 추천 확인 시 살펴볼 마곡 유흥 추천정보 체크리스트</a>
+        <p class="post-item__summary">마곡 코인노래방 추천 장소를 찾는 과정에서 가장 먼저 확인해야 할 것은 위치와 접근성입니다. 역에서 도보로 이동이 가능한지 혹은 주차 시설이 충분히 확보되어 있는지가 이용 편의성을 크게 좌우합니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0281.html">마곡 코인노래방 추천 목록을 살펴보며 합정 노래방 추천정보 비교하기</a>
+        <p class="post-item__summary">친구들과 저녁 식사를 마친 뒤 소화도 시킬 겸 노래를 부르러 가려는 상황은 흔하게 발생합니다. 마곡 코인노래방 추천 정보를 찾던 분들도 막상 합정 지역으로 이동하면 어디로 가야 할지 고민하기 마련입</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0282.html">마곡 코인노래방 추천 글과 달리 연남 클럽 추천정보 확인이 필요한 이유</a>
+        <p class="post-item__summary">클럽은 무조건 밤늦게 가야 한다는 고정관념 때문에 방문을 주저하는 분들이 많습니다. 마곡 코인노래방 추천 리스트를 찾는 분들조차도 연남 지역의 클럽을 떠올리면 거창한 밤 문화를 상상하곤 하지만, 실</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0283.html">마곡 코인노래방 추천 환경을 넘어 합정 셔츠룸 추천정보 살펴보는 방법</a>
+        <p class="post-item__summary">합정에서 셔츠룸을 방문할 때는 시설의 구비 수준과 접근성, 그리고 서비스의 질이 충족되어야 합니다. 마곡 코인노래방 추천 정보를 찾을 때와는 전혀 다른 접근 방식을 취해야 하는 이유가 바로 여기에 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0284.html">마곡 코인노래방 추천 및 공덕 가라오케 추천정보 분석 가이드</a>
+        <p class="post-item__summary">평소 노래를 즐기며 즐거운 시간을 보내기 위해 장소를 찾는 분들이라면 어떤 기준을 먼저 떠올리시나요? 단순히 이동 거리만 고려할지 아니면 음향 장비의 품질이나 공간의 청결도를 우선순위에 둘지 결정하</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0285.html">마곡 코인노래방 추천 기준과 상수 마사지 추천정보 확인법</a>
+        <p class="post-item__summary">건강과 휴식을 위해 관리샵을 방문하기 전, 검증된 정보를 확인하는 것은 매우 중요한 첫 단계입니다. 마곡 코인노래방 추천 리스트를 검색할 때처럼 꼼꼼하게 비교 분석을 진행하면 만족스러운 결과를 얻을</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0286.html">마곡 코인노래방 추천 확인과 망원 노래방 추천정보 비용 비교</a>
+        <p class="post-item__summary">노래방을 선택할 때 흔히 마주하는 고민은 짧게 즐기는 방식과 시간을 정해두고 대여하는 방식 중 무엇이 효율적인가 하는 점입니다. 마곡 코인노래방 추천 정보를 살펴보면 비용을 적게 들이면서도 순간적인</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>

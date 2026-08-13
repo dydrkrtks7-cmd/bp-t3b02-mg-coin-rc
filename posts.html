@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · t3b02-mg-coin-rc</title>
+  <meta name="description" content="t3b02-mg-coin-rc에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://magok-song-guide.mapo-room-guide.xyz/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* CSS Reset & Variables */
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+ }
+
+ :root {
+ --bg-color: #050505;
+ --surface-color: #121212;
+ --signal-green: #39ff14;
+ --signal-red: #ff073a;
+ --signal-yellow: #fff000;
+ --border-color: #ffffff;
+ --text-primary: #ffffff;
+ --text-secondary: #bcbcbc;
+ --accent-blue: #00f0ff;
+ }
+
+ body {
+ background-color: var(--bg-color);
+ color: var(--text-primary);
+ overflow-x: hidden;
+ line-height: 1.6;
+ }
+
+ /* Typography Hierarchy */
+ h1, h2, h3, h4 {
+ font-weight: 900;
+ text-transform: uppercase;
+ letter-spacing: -0.05em;
+ }
+
+ h1 {
+ font-size: clamp(2.5rem, 6vw, 4.5rem);
+ line-height: 1.0;
+ }
+
+ h2 {
+ font-size: clamp(1.8rem, 4vw, 2.8rem);
+ line-height: 1.1;
+ border-bottom: 4px solid var(--text-primary);
+ padding-bottom: 10px;
+ margin-bottom: 30px;
+ }
+
+ h3 {
+ font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+ color: var(--signal-green);
+ }
+
+ p {
+ font-size: 1.1rem;
+ color: var(--text-secondary);
+ }
+
+ /* Layout Helpers */
+ .t-wrap-fdrq {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 20px;
+ }
+
+ .m-body-ii9z {
+ padding: 80px 0;
+ }
+
+ /* Brutalist Navigation */
+ header {
+ border-bottom: 4px solid var(--border-color);
+ background: var(--bg-color);
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+
+ .nav-container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ height: 80px;
+ }
+
+ .logo {
+ font-size: 1.5rem;
+ font-weight: 900;
+ color: var(--text-primary);
+ text-decoration: none;
+ border: 2px solid var(--text-primary);
+ padding: 5px 15px;
+ background: var(--signal-red);
+ box-shadow: 4px 4px 0px var(--text-primary);
+ transition: 0.2s;
+ }
+
+ .logo:hover {
+ transform: translate(-2px, -2px);
+ box-shadow: 6px 6px 0px var(--text-primary);
+ }
+
+ nav ul {
+ display: flex;
+ list-style: none;
+ gap: 20px;
+ }
+
+ nav a {
+ color: var(--text-primary);
+ text-decoration: none;
+ font-weight: 700;
+ font-size: 1rem;
+ padding: 5px 10px;
+ border: 1px solid transparent;
+ }
+
+ nav a:hover {
+ border-color: var(--signal-green);
+ background: rgba(57, 255, 20, 0.1);
+ }
+
+ /* Art Deco Symmetric Frame & Brutalist Cards */
+ .r-list-vgn8-frame {
+ border: 4px solid var(--border-color);
+ background: var(--surface-color);
+ padding: 40px;
+ position: relative;
+ margin-bottom: 60px;
+ box-shadow: 10px 10px 0px var(--signal-green);
+ }
+
+ .r-list-vgn8-frame::before {
+ content: '';
+ position: absolute;
+ top: 5px;
+ left: 5px;
+ right: 5px;
+ bottom: 5px;
+ border: 1px solid var(--text-secondary);
+ pointer-events: none;
+ }
+
+ /* Night Transit Map Concept Styles */
+ .transit-map {
+ display: flex;
+ flex-direction: column;
+ gap: 40px;
+ position: relative;
+ margin-top: 40px;
+ }
+
+ .transit-map::before {
+ content: '';
+ position: absolute;
+ left: 29px;
+ top: 0;
+ bottom: 0;
+ width: 6px;
+ background: repeating-linear-gradient(
+ to bottom,
+ var(--signal-red),
+ var(--signal-red) 20px,
+ var(--signal-yellow) 20px,
+ var(--signal-yellow) 40px
+ );
+ z-index: 1;
+ }
+
+ .transit-node {
+ display: flex;
+ gap: 30px;
+ position: relative;
+ z-index: 2;
+ }
+
+ .node-marker {
+ width: 64px;
+ height: 64px;
+ background: var(--bg-color);
+ border: 4px solid var(--border-color);
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: 900;
+ font-size: 1.5rem;
+ color: var(--signal-green);
+ flex-shrink: 0;
+ box-shadow: 4px 4px 0px var(--signal-yellow);
+ }
+
+ .node-content {
+ background: #181818;
+ border: 2px solid var(--border-color);
+ padding: 25px;
+ width: 100%;
+ box-shadow: 6px 6px 0px var(--text-primary);
+ }
+
+ .node-content h3 {
+ margin-bottom: 15px;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ }
+
+ .badge {
+ background: var(--signal-red);
+ color: white;
+ font-size: 0.8rem;
+ padding: 2px 8px;
+ font-weight: 700;
+ border: 1px solid white;
+ }
+
+ /* Grid Layouts */
+ .grid-2col {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ margin-top: 40px;
+ }
+
+ @media (max-width: 768px) {
+ .grid-2col {
+ grid-template-columns: 1fr;
+ }
+ .transit-map::before {
+ left: 19px;
+ }
+ .node-marker {
+ width: 44px;
+ height: 44px;
+ font-size: 1.1rem;
+ }
+ nav ul {
+ display: none; /* Hamburger pattern placeholder for responsive-768 */
+ }
+ }
+
+ /* Edgy Warning Callout */
+ .warning-box {
+ border: 4px solid var(--signal-red);
+ background: rgba(255, 7, 58, 0.1);
+ padding: 30px;
+ margin: 40px 0;
+ position: relative;
+ }
+
+ .warning-box h4 {
+ color: var(--signal-red);
+ font-size: 1.5rem;
+ margin-bottom: 10px;
+ }
+
+ /* Footer */
+ footer {
+ border-top: 4px solid var(--border-color);
+ padding: 60px 0;
+ background: #000;
+ margin-top: 80px;
+ }
+
+ .footer-grid {
+ display: grid;
+ grid-template-columns: 2fr 1fr 1fr;
+ gap: 40px;
+ }
+
+ @media (max-width: 768px) {
+ .footer-grid {
+ grid-template-columns: 1fr;
+ }
+ }
+
+ .footer-brand h5 {
+ font-size: 1.8rem;
+ color: var(--signal-green);
+ margin-bottom: 20px;
+ }
+
+ .footer-links h6 {
+ font-size: 1.1rem;
+ margin-bottom: 15px;
+ border-bottom: 2px solid var(--border-color);
+ padding-bottom: 5px;
+ }
+
+ .footer-links ul {
+ list-style: none;
+ }
+
+ .footer-links li {
+ margin-bottom: 10px;
+ }
+
+ .footer-links a {
+ color: var(--text-secondary);
+ text-decoration: none;
+ }
+
+ .footer-links a:hover {
+ color: var(--signal-yellow);
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · t3b02-mg-coin-rc">
+  <meta property="og:description" content="t3b02-mg-coin-rc에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://magok-song-guide.mapo-room-guide.xyz/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="t-wrap-fdrq nav-container">
+ <a href="/" class="logo">MAGOK SIGNAL</a>
+ <nav>
+ <ul>
+ <li><a href="/">홈</a></li>
+ <li><a href="/blog" style="color: var(--signal-yellow); border-bottom: 2px solid var(--signal-yellow);">가이드 블로그</a></li>
+ </ul>
+ </nav>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 32개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0307.html">마곡 코인노래방 추천: 이동성</a>
+        <p class="post-item__summary">마곡에서 코인노래방을 찾는다면, 접근성과 시설 우수성을 동시에 고려해야 합니다. 주변에 아이엠쉬, 디에이치폴리오 등 인기 브랜드가 밀집해 있지만, 좌석 편의와 음질을 한 번에 만족시켜 주는 곳을 고</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0308.html">마곡 코인노래방 추천: 최신 사운드와 편리한 결제</a>
+        <p class="post-item__summary">마곡에 위치한 코인노래방은 최신 음성 시스템과 손쉬운 결제 방식을 제공합니다. 입장 시 마일리지 코인을 사용해 카드 없이 결제할 수 있어 편리합니다. 음성 조절과 셀프 리모컨 기능이 있어 접근성이 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0309.html">마곡 코인노래방 추천: 디지털 음성의 새로운 무대</a>
+        <p class="post-item__summary">마곡에 위치한 코인노래방은 안락한 분위기와 최신 장비로 많은 이들의 무대를 엽니다. 수입이 디지털 화폐와 연계되는 바른 환경을 제공하며, 라이트한 인테리어가 일상에 색다른 활력을 줍니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0310.html">마곡 코인노래방, 새로워진 음악 체험의 거리</a>
+        <p class="post-item__summary">마곡에 자리한 코인노래방은 최신 음향 장비와 편안한 분위기를 동시에 제공합니다. 무대처럼 깜박이는 LED 조명이 음악에 대한 새로운 감각을 선사합니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0311.html">마곡 코인노래방 추천: 블록체인과 음악이 만나는 새로운 공간</a>
+        <p class="post-item__summary">마곡에 새로 문을 연 코인노래방은 음악과 블록체인을 결합한 독특한 체험을 제공합니다. 최신 가사 표시와 음향 장비를 갖추었으며, 방문 시 바로 노래를 녹음할 수 있습니다. 30분마다 특가 이벤트가 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0312.html">마곡 코인노래방 추천: 분위기와 서비스 한눈에</a>
+        <p class="post-item__summary">마곡 지역에 위치한 코인노래방은 최신 음향 시스템과 깔끔한 인테리어를 자랑합니다. 포인트는 비용이 투명하게 표시되는 시스템이라 학생들부터 직장인까지 부담 없이 이용할 수 있습니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0313.html">마곡 코인노래방 추천: 음악과 코인을 동시에 즐기는 곳</a>
+        <p class="post-item__summary">마곡 동구에 자리한 코인노래방은 SNS를 통해 소개된 신호성 높은 장소입니다. 전용 음성 서라운드와 반응형 LED 스크린은 노래를 더욱 몰입감 있게 만들어 줍니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0314.html">마곡 코인노래방 추천: 가상화폐로 즐기는 현대 노래 체험</a>
+        <p class="post-item__summary">마곡 코인노래방에선 가상화폐를 이용해 노래를 부르는 새로운 문화가 자리 잡고 있습니다. 투명한 블록체인 결제로 언제든지 음악을 즐길 수 있고, 사용자는 실시간으로 토큰을 적립하고 돌려받을 수 있죠.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0315.html">마곡 코인노래방 추천: 디지털 송금이 가능한 노래방</a>
+        <p class="post-item__summary">마곡 지역에 새롭게 문을 연 코인노래방은 비트코인 지갑으로 바로 송금이 가능해 편리합니다. 입장 시 반려동물 친화적 정책과 AI 음성 가이드를 통해 초보자도 곧 적응할 수 있습니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0316.html">마곡 코인노래방 추천: 편안한 멜로디와 시원한 서비스</a>
+        <p class="post-item__summary">마곡의 코인노래방은 요즘 젊은이들 사이에서 인기 있는 공간입니다. 음료와 음수 잔을 전자상가에서 바로 결제할 수 있어 편리합니다. 특히 밤늦게까지 열려 있는 점이 큰 장점이죠.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0317.html">마곡 코인노래방 추천</a>
+        <p class="post-item__summary">마곡에서 코인노래방을 찾고 있다면, 방비용이 저렴하고 24시간 운영되는 곳을 위해 몇 가지 체크리스트를 정리했다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0318.html">마곡 코인노래방 추천: 방음부터 음질까지</a>
+        <p class="post-item__summary">코인노래방은 곡수와 시설이 중요하죠. 재료처럼 작은 선택이 전형을 결정합니다. 마곡 지역은 인구가 많지만 다양한 옵션이 있어 선택이 쉽지 않아요.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0319.html">마곡 코인노래방에서 즐기는 최신 트렌드</a>
+        <p class="post-item__summary">마곡 지역에 새롭게 등장한 코인노래방, 디지털 결제와 함께 노래를 즐길 수 있는 편리함이 인기를 끌고 있다. 회원 가입 시 비트코인 등 암호화폐로 바로 충전이 가능해 현금이 필요 없다. 멤버십 등급</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0320.html">마곡 코인노래방 추천: 즐거운 노래와 편리한 투자가 만나는 곳</a>
+        <p class="post-item__summary">마곡에 위치한 코인노래방은 최신 사운드 장비와 디지털 투자를 결합한 새로운 콘셉트이다. 동시에 입소문이 자자해 주변 학생과 직장인들이 즐겨 찾는 장소가 되었다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0321.html">마곡 코인노래방에서 즐기는 새로운 음악 경험</a>
+        <p class="post-item__summary">마곡 코인노래방은 지하철역에서 바로 찾아볼 수 있고, 아늑한 내부와 최신 음향 장비가 돋보인다. 각 방마다 테마가 별도로 설정되어 있어 낭만적이면서도 집중한 노래 시간을 보낼 수 있다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0322.html">마곡 코인노래방 추천: 편리하고 즐거운 선택</a>
+        <p class="post-item__summary">마곡에 새로 오픈한 코인노래방은 즐거움과 편리함을 동시에 제공합니다. 고음질 사운드 시스템과 다양한 노래가 당신을 기다리고 있어요.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0323.html">마곡 코인노래방 추천: 디지털 노래방의 새로운 흐름</a>
+        <p class="post-item__summary">마곡은 서울의 동부에 위치하며, 젊은 세대와 tech‑savvy 인구가 몰리는 지역입니다. 이러한 분위기 속에서 새롭게 부상한 코인노래방이 인기를 끌고 있습니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260707-0324.html">마곡 코인노래방 추천, 최신 음향과 디지털 결제의 만남</a>
+        <p class="post-item__summary">마곡에 위치한 코인노래방은 최신 음향 시스템과 디지털 결제 솔루션으로, 다양한 음악 장르를 편안히 즐길 수 있는 곳입니다. 현수코인과 비트코인 결제를 한 번에 지원해 사용자 경험을 한층 높였습니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0059.html">마곡 코인노래방 추천 리스트와 구글 알고리즘 고신용 도메인 보증 카드 발급</a>
+        <p class="post-item__summary">성공적인 여가 공간 선택을 위해서는 이용 인원 구성, 접근성, 그리고 시설물의 관리 상태라는 세 가지 필수 조건을 꼼꼼히 따져봐야 합니다. 마곡 코인노래방 추천 장소를 탐색할 때 이러한 기준을 충족</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0060.html">마곡 코인노래방 추천 정보와 효율적인 셔츠룸 예약 시스템 비교 분석</a>
+        <p class="post-item__summary">혹시 여러분은 마곡 코인노래방 추천 목록을 보면서 정말 나에게 맞는 곳인지 스스로 질문해 본 적이 있습니까? 단순히 거리나 가격만을 기준으로 삼기에는 우리가 겪게 될 서비스의 깊이가 다를 수 있기 </p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
